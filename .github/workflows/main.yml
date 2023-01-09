@@ -40,7 +40,7 @@ jobs:
       #     ln -s $(pwd)/../horizonTR keyboards/horizonTR/keymaps/horizonTRmap
       - name: Build horizon firmware
         working-directory: ./qmk_firmware
-        run: qmk compile -kb horizon
+        run: qmk compile -kb horizon -k default
       - name: Archive
         uses: actions/upload-artifact@v2
         with:
