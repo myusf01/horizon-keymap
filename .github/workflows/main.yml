@@ -33,14 +33,14 @@ jobs:
         run: |
           python3 -m pip install --user qmk
           qmk setup --yes --home .
-      - name: Prepare qmk_firmware folder
-        working-directory: ./qmk_firmware
-        run: |
-          mkdir -p keyboards/horizonTR/keymaps
-          ln -s $(pwd)/../horizonTR keyboards/horizonTR/keymaps/horizonTRmap
+      # - name: Prepare qmk_firmware folder
+      #   working-directory: ./qmk_firmware
+      #   run: |
+      #     mkdir -p keyboards/horizonTR/keymaps
+      #     ln -s $(pwd)/../horizonTR keyboards/horizonTR/keymaps/horizonTRmap
       - name: Build horizon firmware
         working-directory: ./qmk_firmware
-        run: qmk compile -kb horizon -km horizonTRmap
+        run: qmk compile -kb horizon
       - name: Archive
         uses: actions/upload-artifact@v2
         with:
