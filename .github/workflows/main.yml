@@ -36,11 +36,11 @@ jobs:
       - name: Prepare qmk_firmware folder
         working-directory: ./qmk_firmware
         run: |
-          mkdir -p keyboards/horizon_tr/keymaps
-          ln -s $(pwd)/../horizon_tr keyboards/horizon_tr/keymaps/horizonTR
+          mkdir -p keyboards/horizonTR/keymaps
+          ln -s $(pwd)/../horizonTR keyboards/horizonTR/keymaps/horizonTRmap
       - name: Build horizon firmware
         working-directory: ./qmk_firmware
-        run: qmk compile -kb horizon_tr -km horizon_tr
+        run: qmk compile -kb horizonTR -km horizonTRmap
       - name: Archive
         uses: actions/upload-artifact@v2
         with:
