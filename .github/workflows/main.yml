@@ -36,7 +36,7 @@ jobs:
       - name: Prepare qmk_firmware folder
         working-directory: ./qmk_firmware
         run: |
-          mkdir -p keyboards/horizonTR/keymaps
+          mkdir -p keyboards/horizonTR/keymap
           ln -s $(pwd)/../horizonTR keyboards/horizonTR/keymaps/horizonTRmap
       - name: Build horizon firmware
         working-directory: ./qmk_firmware
